@@ -2,7 +2,7 @@
 
 import { auth, signOutUser } from "@/firebase/firebaseauth";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 
 
@@ -11,7 +11,7 @@ import { usePathname, useRouter } from "next/navigation";
 export default function Navbar() {
 
 
-    const currentPath = usePathname();
+    // const currentPath = usePathname();
 
 
     return (
