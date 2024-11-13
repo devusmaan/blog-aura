@@ -8,7 +8,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/firebaseauth"; 
 
 export default function EmailVerification() {
-    const { user } = AuthContextData()!;
     const router = useRouter();
 
     useEffect(() => {
