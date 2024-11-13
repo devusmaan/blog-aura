@@ -10,7 +10,7 @@ export function SignupForm(email: string, password: string, setError: (error: st
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed up 
-            const user = userCredential.user;
+            // const user = userCredential.user;
             const { uid, email } = userCredential.user;
             sendEmailVerification(auth.currentUser as User);
             // console.log(user, 'user created successfully.');
@@ -60,9 +60,7 @@ export function loginForm(email: string, password: string, setError: (error: str
             }
             // ...
         })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+        .catch(() => {
             // console.error(errorMessage, 'already login your account.');
             setError("Incorrect Email or Password")
         });
@@ -85,7 +83,7 @@ export function emailVerification() {
 export function signOutUser(auth: Auth) {
     signOut(auth).then(() => {
         console.log("Sign-out successful.");
-    }).catch((error) => {
+    }).catch(() => {
         console.log(" An error happened");
     });
 }

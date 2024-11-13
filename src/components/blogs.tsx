@@ -14,17 +14,17 @@ export default function AllBlogs() {
     }, []);
 
     const fetchAllJobs = async () => {
-        let blogsRef = collection(db, "blogs");
+        const blogsRef = collection(db, "blogs");
     
 
         const unsub = onSnapshot(blogsRef, async (blogsSnapshot) => {
-            let allBlogsResolving = blogsSnapshot.docs.map(async (blog) => {
-                let blogData = blog.data();
+            const allBlogsResolving = blogsSnapshot.docs.map(async (blog) => {
+                const blogData = blog.data();
 
-                let blogCreatorUID = blogData.uid;
-                let blogCreatorRef = doc(db, "users", blogCreatorUID);
-                let blogCreatorInfo = await getDoc(blogCreatorRef);
-                let blogObject = {
+                const blogCreatorUID = blogData.uid;
+                const blogCreatorRef = doc(db, "users", blogCreatorUID);
+                const blogCreatorInfo = await getDoc(blogCreatorRef);
+                const blogObject = {
                     ...blogData,
                     blogInfo: blogCreatorInfo.data(),
                     docId: blog.id,
@@ -33,7 +33,7 @@ export default function AllBlogs() {
                 return blogObject;
             });
 
-            let allBlogsData = await Promise.all(allBlogsResolving);
+            const allBlogsData = await Promise.all(allBlogsResolving);
             console.log(allBlogsData);
             setAllBlogs(allBlogsData);
         });
