@@ -40,6 +40,9 @@ export default function AllBlogs() {
 
         return unsub;
 
+        
+        
+
     };
     return (
         <>
@@ -64,10 +67,9 @@ export default function AllBlogs() {
                                 <p className="font-bold text-sm sm:text-base">Category:</p>
                                 <div className="badge badge-secondary ml-1 sm:ml-3">{category}</div>
 
-                                <p className="font-bold text-sm sm:text-base">Date:</p>
-
+                                Date: {new Date(date.seconds * 1000).toLocaleDateString()} {new Date(date.seconds * 1000).toLocaleTimeString()}
                                 {/* <p className="pl-1 text-sm sm:text-base">{new Date().toLocaleTimeString([], { hour: 'numeric', minute: 'numeric', hour12: true })}</p> */}
-                                <p className="pl-1 text-sm sm:text-base">{new Date().toLocaleDateString()}</p>
+                                {/* <p className="pl-1 text-sm sm:text-base">{new Date().toLocaleDateString()}</p> */}
 
                                 <p className="font-bold text-sm sm:text-base">Description:</p>
                                 <p className="pl-1 break-words text-sm sm:text-base h-20 overflow-hidden">{description}</p>

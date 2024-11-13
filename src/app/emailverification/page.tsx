@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { AuthContextData } from "@/context/auth.context";
 import { emailVerification } from "@/firebase/firebaseauth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/firebaseauth"; 
